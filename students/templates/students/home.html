@@ -7,10 +7,31 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Lorem, ipsum dolor.</h1>
+    <h1>{{title}}</h1> <hr>
     <p>
-      this is home page
+      this is home page <br>
+      {{description}}
+    </p> <br> <hr>
+    <p>
+      {{number}}
+      {{list}}
+    </p><hr>
+    <br>
+    <b>{{list.5.1}}</b>
+    <hr>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing.
+      <ul>
+        {% for i in list %}
+        <li>{{i}}</li>
+        {% endfor %}
+      </ul>
+      <hr>
+      {% if number == 12563784 %}
+      <h3>Tunahan</h3>
+      {% else %}
+      <h3>Fatmagül</h3>
+      {% endif %}
     </p>
-    <p>{{title}}</p>
   </body>
 </html>
