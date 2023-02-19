@@ -1,5 +1,13 @@
-{% extends 'base.html' %}
-{% block title %}diffrent{% endblock title %}
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'students/main.css' %}" />
+{% endblock link %} 
+
+{% block title %}form{% endblock title %}
+
 {% block body %}
-<h1>change body block </h1>
+  <h1>change body block</h1>
 {% endblock body %}
