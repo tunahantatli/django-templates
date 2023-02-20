@@ -9,5 +9,5 @@ class Student( models.Model):
     image = models.ImageField(upload_to='students', blank=True)
 
     def __str__(self):
-        return f'{self.first_name}  {self.last_name} {self.school_number}'
+        return f'{self.school_number}-{self.first_name}  {self.last_name}'
     

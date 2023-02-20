@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from .models import Student
+from .forms import StudentForm
 # Create your views here.
 def home(request):
     context = {
@@ -16,3 +19,20 @@ def home(request):
     }
     return render(request, 'students/home.html', context)
    # return HttpResponse('<h1>Hello</h1>')
+
+def student_list(request):
+    students = Student.objects.all()
+    context = {
+        'students': students
+    }
+    return render(request, 'students/student_list.html', context)
+
+
+def student_add(request):
+    form = StudentForm()
+    if request.method == 'POST':
+        print('POST :', request.POST)
+    context = {
+        'form': form
+    }
+    return render(request, 'students/student_add.html', context)
