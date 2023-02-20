@@ -32,6 +32,10 @@ def student_add(request):
     form = StudentForm()
     if request.method == 'POST':
         print('POST :', request.POST)
+        print('files :', request.FILES)
+        form = StudentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
     context = {
         'form': form
     }
