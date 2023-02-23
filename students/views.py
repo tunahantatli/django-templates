@@ -64,6 +64,10 @@ def student_detail(request, id):
 
 def student_delete(request, id):
     student = get_object_or_404(Student, id=id)
+
+    if request.method == 'POST':
+        student.delete()
+        return redirect('student_list')
     context = {
         'student': student
     }
